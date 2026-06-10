@@ -1,8 +1,20 @@
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /houseofsocial/
+    RewriteEngine On
+    RewriteBase /
 
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ index.php/$1 [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
+
+
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW PWPROTECTID:sA73P5tQgo
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /home/u217682641/domains/houseofsocial.io/public_html/.htpasswd
+Require valid-user
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE sA73P5tQgo:PWPROTECTID
+

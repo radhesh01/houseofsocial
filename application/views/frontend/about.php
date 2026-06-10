@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
 <style>
 /* ================================================================
    ABOUT PAGE — HouseOfSocial
@@ -297,6 +297,7 @@
 }
 
 .ab-shift {
+    text-align: center;
     background: var(--s2);
     padding: 20px 22px;
     border: 1px solid var(--b1);
@@ -309,7 +310,7 @@
 }
 
 .ab-shift-from {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ghost3);
     margin-bottom: 4px;
     text-decoration: line-through;
@@ -323,7 +324,7 @@
 }
 
 .ab-shift-to {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--paper);
 }
@@ -493,7 +494,7 @@
     max-width: var(--maxW);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2px;
 }
 
@@ -829,10 +830,10 @@
                     like it's 2016. We don't.</p>
             </div>
             <div class="ab-open-br">
-                <p class="ab-open-desc">House Of Social was built by people who grew up online. We understand how
-                    attention actually works in 2025, and we know the difference between a brand that's <em
-                        style="color:var(--paper)">on</em> social media and a brand that <em
-                        style="color:var(--flame)">is</em> social media.</p>
+                <p class="ab-open-desc"><em
+                        style="color:var(--paper)">House Of Social was built by people who grew up</em> <em 
+                        style="color:var(--flame) ; font-weight:bold;">online.</em> We understand how
+                    attention actually works in 2025, and we know the difference between a brand that's on social media and a brand that is social media.</p>
                 <a href="<?= base_url('contact') ?>" class="btn-primary" style="align-self:flex-start">Let's build
                     together &rarr;</a>
             </div>
@@ -940,14 +941,15 @@
     <div class="ab-numbers-grid rv">
         <?php foreach (
             [
-                [$settings['stat_campaigns'] ?? '300', '+', 'Campaigns'],
-                ['12', 'M+', 'People Reached'],
-                ['10', 'K+', 'Creator Network'],
-                ['150', '+', 'Brands Worked With'],
+                ['250', '+', 'Campaigns Delivered', 'data-count="250" data-suffix="+"'],
+                ['2', 'B+', 'Impressions Generated', 'data-count="2" data-suffix="B+"'],
+                ['850', 'M+', 'Total Audience Reach', 'data-count="850" data-suffix="M+"'],
+                ['40', 'K+', 'Creator Network', 'data-count="40" data-suffix="K+"'],
+                ['150', '+', 'Brands Worked With', 'data-count="150" data-suffix="+"'],
             ] as $i => $n
         ): ?>
         <div class="ab-num-cell rv d<?= $i + 1 ?>">
-            <span class="ab-num-n" data-count="<?= $n[0] ?>" data-suffix="<?= $n[1] ?>"><?= $n[0] . $n[1] ?></span>
+            <span class="ab-num-n" <?= $n[3] ?>><?= $n[0] . $n[1] ?></span>
             <span class="ab-num-l"><?= htmlspecialchars($n[2]) ?></span>
         </div>
         <?php endforeach; ?>
